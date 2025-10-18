@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Universal AI Backup</title>
     <style>
@@ -10,11 +11,62 @@
             padding: 20px;
             line-height: 1.6;
         }
-        .hero { text-align: center; padding: 50px 0; }
-        .pricing { display: flex; gap: 20px; justify-content: center; }
-        .plan { border: 2px solid #ddd; padding: 30px; border-radius: 10px; }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .pricing {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .plan {
+            border: 2px solid #ddd;
+            padding: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .plan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: #6366f1;
+        }
+
+        .plan.featured {
+            border-color: #6366f1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .plan-btn {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .plan-btn:hover {
+            background: #4f46e5;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
     </style>
 </head>
+
 <body>
     <div class="hero">
         <h1>Universal AI Backup</h1>
@@ -30,29 +82,71 @@
     </ul>
 
     <div class="pricing">
-        <div class="plan">
+        <div class="plan" onclick="selectPlan('free')">
             <h3>Free</h3>
-            <p>$0/month</p>
+            <p class="price">$0/month</p>
             <p>10 exports/day</p>
+            <p>Basic formats</p>
+            <button class="plan-btn">Get Started</button>
         </div>
-        <div class="plan">
+        <div class="plan featured" onclick="selectPlan('starter')">
             <h3>Starter</h3>
-            <p>$19/month</p>
+            <p class="price">$19/month</p>
             <p>100 exports/month</p>
+            <p>3 platforms</p>
+            <button class="plan-btn">Subscribe</button>
         </div>
-        <div class="plan">
+        <div class="plan" onclick="selectPlan('pro')">
             <h3>Pro</h3>
-            <p>$39/month</p>
-            <p>Unlimited + Auto-backup</p>
+            <p class="price">$39/month</p>
+            <p>Unlimited exports</p>
+            <p>Auto-backup</p>
+            <button class="plan-btn">Subscribe</button>
         </div>
     </div>
 
+    <script>
+        async function selectPlan(tier) {
+            if (tier === 'free') {
+                // For free tier, direct to Chrome Web Store
+                alert('Free tier - no payment needed! Download the extension to get started.');
+                // window.location.href = 'chrome-web-store-link';
+                return;
+            }
+
+            // Get user email
+            const email = prompt('Enter your email to continue:');
+            if (!email) return;
+
+            try {
+                const response = await fetch('https://universal-ai-backup-server-production.up.railway.app/create-checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ tier, email })
+                });
+
+                const data = await response.json();
+
+                if (data.url) {
+                    // Redirect to Stripe checkout
+                    window.location.href = data.url;
+                } else {
+                    alert('Checkout setup in progress. Please try again later.');
+                }
+            } catch (error) {
+                console.error('Checkout error:', error);
+                alert('Unable to process payment at this time.');
+            }
+        }
+    </script>
+
     <h2>Support</h2>
-    <p>Email: your-email@example.com</p>
+    <p>Email: aibackuppro@gmail.com</p>
 
     <footer>
-        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="privacy.html">Privacy Policy</a> |
         <a href="terms.html">Terms of Service</a>
     </footer>
 </body>
+
 </html>
