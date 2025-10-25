@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Universal AI Backup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --purple: #8b5cf6;
+            --pink: #ec4899;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.2) 0%, transparent 50%);
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2em, 4vw, 3em);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--purple), var(--pink), var(--purple));
+        }
+
+        .card h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .card p, .card li {
+            color: var(--text-secondary);
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--purple);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .contact-card a {
+            color: var(--purple);
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .contact-card a:hover {
+            color: var(--pink);
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .faq-answer a {
+            color: var(--purple);
+            text-decoration: none;
+        }
+
+        .faq-answer a:hover {
+            color: var(--pink);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--purple);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">💾</div>
+                <div class="logo-text">Universal AI Backup</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="hero">
+            <h1>How Can We Help?</h1>
+            <p>Get support for Universal AI Backup extension</p>
+        </section>
+
+        <!-- Contact Methods -->
+        <section class="card">
+            <h2>📧 Contact Us</h2>
+            <p>Choose your preferred way to get in touch:</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <span class="contact-icon">✉️</span>
+                    <h3>Email Support</h3>
+                    <a href="mailto:aibackuppro@gmail.com">aibackuppro@gmail.com</a>
+                    <p style="margin-top: 10px; font-size: 0.9em;">Response within 24-48 hours</p>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">🐛</span>
+                    <h3>Report Bug</h3>
+                    <a href="mailto:aibackuppro@gmail.com?subject=Bug%20Report">Report an Issue</a>
+                    <p style="margin-top: 10px; font-size: 0.9em;">Include steps to reproduce</p>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">💡</span>
+                    <h3>Feature Request</h3>
+                    <a href="mailto:aibackuppro@gmail.com?subject=Feature%20Request">Suggest Feature</a>
+                    <p style="margin-top: 10px; font-size: 0.9em;">We love your ideas!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="card">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I activate my Pro license?</div>
+                <div class="faq-answer">
+                    After purchasing, you'll receive a license key via email. Click the extension icon, go to Settings, and enter your license key in the "License Key" field.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Which AI platforms are supported?</div>
+                <div class="faq-answer">
+                    Universal AI Backup supports:
+                    <ul>
+                        <li>Claude (claude.ai)</li>
+                        <li>ChatGPT (chat.openai.com, chatgpt.com)</li>
+                        <li>Gemini (gemini.google.com)</li>
+                        <li>Microsoft Copilot (copilot.microsoft.com)</li>
+                        <li>Grok (x.com, grok.x.com)</li>
+                        <li>Perplexity (perplexity.ai)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Where are my backups stored?</div>
+                <div class="faq-answer">
+                    All backups are stored locally on your computer in your browser's download folder. We don't upload or store your conversations on any server - everything stays private and secure on your device.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What export formats are available?</div>
+                <div class="faq-answer">
+                    Free tier: JSON, Markdown, HTML, and Text<br>
+                    Pro tier: All formats above plus ZIP archives, code extraction, and custom formatting options
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I use the floating backup button?</div>
+                <div class="faq-answer">
+                    The floating button appears automatically on supported AI platforms. Click it to quickly backup your current conversation. You can toggle its visibility with Ctrl+Shift+H (Cmd+Shift+H on Mac) or hide it in settings.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I get a refund?</div>
+                <div class="faq-answer">
+                    Yes! We offer a 30-day money-back guarantee. If you're not satisfied with the Pro version, email us at <a href="mailto:aibackuppro@gmail.com">aibackuppro@gmail.com</a> within 30 days of purchase for a full refund.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">The extension isn't working on my AI platform</div>
+                <div class="faq-answer">
+                    Try these troubleshooting steps:
+                    <ul>
+                        <li>Refresh the page (F5 or Ctrl+R)</li>
+                        <li>Check that the extension is enabled in chrome://extensions/</li>
+                        <li>Clear browser cache and cookies</li>
+                        <li>Disable other extensions that might conflict</li>
+                        <li>Update Chrome/Edge to the latest version</li>
+                    </ul>
+                    If issues persist, email us with details about your browser version and the AI platform you're using.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is my data private and secure?</div>
+                <div class="faq-answer">
+                    Absolutely! All processing happens locally on your device. We never send your conversations to any server, and we don't collect or store your data. Your AI conversations are yours alone.
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section class="card">
+            <h2>🔧 Common Issues & Solutions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Floating button not appearing</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Check if button is hidden: Press Ctrl+Shift+H to toggle</li>
+                        <li>Verify you're on a supported AI platform</li>
+                        <li>Refresh the page</li>
+                        <li>Check extension settings to ensure button is enabled</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Export failing or incomplete</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Ensure the conversation is fully loaded (scroll through it)</li>
+                        <li>Check your download folder permissions</li>
+                        <li>Try a different export format</li>
+                        <li>For very long conversations, use ZIP format (Pro tier)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">License key not activating</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Ensure you're copying the entire key with no extra spaces</li>
+                        <li>Check the email you used matches the one on your license</li>
+                        <li>Wait a few minutes if you just purchased (key generation takes time)</li>
+                        <li>Contact support if key still doesn't work</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Still Need Help -->
+        <section class="card" style="text-align: center;">
+            <h2>Still Need Help?</h2>
+            <p style="margin-bottom: 25px;">Can't find what you're looking for? We're here to help!</p>
+            <a href="mailto:aibackuppro@gmail.com" style="display: inline-block; padding: 14px 35px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 1.1em;">
+                Contact Support
+            </a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="terms.html">Terms of Service</a>
+            <span>•</span>
+            <a href="index.html">Home</a>
+        </div>
+        <p style="margin-top: 15px;">© 2025 Universal AI Backup. All rights reserved.</p>
+    </footer>
+</body>
+</html>
