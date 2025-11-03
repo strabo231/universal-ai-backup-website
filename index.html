@@ -813,9 +813,7 @@
 
         function selectPlan(tier) {
             if (tier === 'free') {
-                alert('Download the extension from Chrome Web Store to get started with the free tier!');
-                // TODO: Update with actual Chrome Web Store link when published
-                // window.location.href = 'https://chrome.google.com/webstore/detail/YOUR_EXTENSION_ID';
+                showInstallModal();
                 return;
             }
 
@@ -840,6 +838,138 @@
             // Update UI
             document.getElementById('stripeOption').classList.toggle('selected', method === 'stripe');
             document.getElementById('cryptoOption').classList.toggle('selected', method === 'crypto');
+        }
+
+        function showInstallModal() {
+            // Create modal overlay
+            const modal = document.createElement('div');
+            modal.id = 'installModal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.85);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                backdrop-filter: blur(5px);
+                animation: fadeIn 0.3s ease;
+            `;
+
+            // Create modal content
+            modal.innerHTML = `
+                <div style="
+                    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                    border: 2px solid;
+                    border-image: linear-gradient(135deg, #8b5cf6, #ec4899) 1;
+                    border-radius: 20px;
+                    padding: 40px;
+                    max-width: 500px;
+                    width: 90%;
+                    text-align: center;
+                    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.5);
+                    animation: slideUp 0.3s ease;
+                    position: relative;
+                ">
+                    <div style="
+                        font-size: 60px;
+                        margin-bottom: 20px;
+                        animation: bounce 1s ease infinite;
+                    ">🚀</div>
+                    
+                    <h2 style="
+                        background: linear-gradient(135deg, #8b5cf6, #ec4899);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        margin-bottom: 15px;
+                        font-size: 28px;
+                        font-weight: 700;
+                    ">Ready to Backup Your AI Chats?</h2>
+                    
+                    <p style="
+                        color: #94a3b8;
+                        margin-bottom: 30px;
+                        line-height: 1.8;
+                        font-size: 16px;
+                    ">
+                        Install the free Chrome extension and never lose your conversations again!<br>
+                        <strong style="color: #10b981;">✓ Instant setup</strong> • 
+                        <strong style="color: #10b981;">✓ No credit card needed</strong>
+                    </p>
+                    
+                    <a href="https://chromewebstore.google.com/detail/koeajmbhfgjemnnokondkepapidifedb" 
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style="
+                           display: inline-block;
+                           background: linear-gradient(135deg, #8b5cf6, #ec4899);
+                           color: white;
+                           padding: 18px 50px;
+                           border-radius: 50px;
+                           text-decoration: none;
+                           font-weight: 700;
+                           font-size: 18px;
+                           margin-bottom: 20px;
+                           transition: all 0.3s ease;
+                           box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+                       "
+                       onmouseover="this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 15px 40px rgba(139, 92, 246, 0.6)'"
+                       onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(139, 92, 246, 0.4)'"
+                       onclick="setTimeout(() => document.getElementById('installModal')?.remove(), 300)">
+                        📥 Install Free Extension
+                    </a>
+                    
+                    <br>
+                    
+                    <button onclick="document.getElementById('installModal').remove()"
+                            style="
+                                background: transparent;
+                                color: #64748b;
+                                border: none;
+                                padding: 12px 24px;
+                                cursor: pointer;
+                                font-size: 14px;
+                                font-weight: 500;
+                                transition: color 0.2s;
+                                font-family: inherit;
+                            "
+                            onmouseover="this.style.color='#94a3b8'"
+                            onmouseout="this.style.color='#64748b'">
+                        Maybe later
+                    </button>
+                </div>
+            `;
+
+            // Add animations
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes slideUp {
+                    from { transform: translateY(30px); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                }
+                @keyframes bounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Close on outside click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+
+            document.body.appendChild(modal);
         }
 
         function closeEmailModal() {
