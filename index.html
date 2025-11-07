@@ -890,38 +890,84 @@
                         font-weight: 700;
                     ">Ready to Backup Your AI Chats?</h2>
                     
+                    <!-- REPLACE LINES 893-924 in your index.html with this: -->
+
                     <p style="
                         color: #94a3b8;
                         margin-bottom: 30px;
                         line-height: 1.8;
                         font-size: 16px;
                     ">
-                        Install the free Chrome extension and never lose your conversations again!<br>
+                        Choose your browser and never lose your conversations again!<br>
                         <strong style="color: #10b981;">✓ Instant setup</strong> • 
                         <strong style="color: #10b981;">✓ No credit card needed</strong>
                     </p>
                     
-                    <a href="https://chromewebstore.google.com/detail/koeajmbhfgjemnnokondkepapidifedb" 
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       style="
-                           display: inline-block;
-                           background: linear-gradient(135deg, #8b5cf6, #ec4899);
-                           color: white;
-                           padding: 18px 50px;
-                           border-radius: 50px;
-                           text-decoration: none;
-                           font-weight: 700;
-                           font-size: 18px;
-                           margin-bottom: 20px;
-                           transition: all 0.3s ease;
-                           box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-                       "
-                       onmouseover="this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 15px 40px rgba(139, 92, 246, 0.6)'"
-                       onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(139, 92, 246, 0.4)'"
-                       onclick="setTimeout(() => document.getElementById('installModal')?.remove(), 300)">
-                        📥 Install Free Extension
-                    </a>
+                    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto 30px;">
+                        <a href="https://chromewebstore.google.com/detail/koeajmbhfgjemnnokondkepapidifedb" 
+                           target="_blank" rel="noopener noreferrer"
+                           style="display: flex; align-items: center; gap: 15px; background: rgba(139, 92, 246, 0.1); 
+                                  border: 2px solid #8b5cf6; padding: 15px 20px; border-radius: 12px; 
+                                  text-decoration: none; color: white; transition: all 0.3s ease;"
+                           onmouseover="this.style.background='rgba(139, 92, 246, 0.2)'; this.style.transform='translateX(5px)'"
+                           onmouseout="this.style.background='rgba(139, 92, 246, 0.1)'; this.style.transform='translateX(0)'"
+                           onclick="setTimeout(() => document.getElementById('installModal')?.remove(), 300)">
+                            <span style="font-size: 32px;">🌐</span>
+                            <div style="text-align: left;">
+                                <div style="font-weight: 700; font-size: 16px;">Chrome</div>
+                                <div style="font-size: 12px; color: #94a3b8;">Most popular</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://addons.mozilla.org/en-US/firefox/addon/universal-ai-backup/" 
+                           target="_blank" rel="noopener noreferrer"
+                           style="display: flex; align-items: center; gap: 15px; background: rgba(255, 95, 21, 0.1); 
+                                  border: 2px solid #ff5f15; padding: 15px 20px; border-radius: 12px; 
+                                  text-decoration: none; color: white; transition: all 0.3s ease;"
+                           onmouseover="this.style.background='rgba(255, 95, 21, 0.2)'; this.style.transform='translateX(5px)'"
+                           onmouseout="this.style.background='rgba(255, 95, 21, 0.1)'; this.style.transform='translateX(0)'"
+                           onclick="setTimeout(() => document.getElementById('installModal')?.remove(), 300)">
+                            <span style="font-size: 32px;">🦊</span>
+                            <div style="text-align: left;">
+                                <div style="font-weight: 700; font-size: 16px;">Firefox</div>
+                                <div style="font-size: 12px; color: #94a3b8;">Privacy-focused</div>
+                            </div>
+                        </a>
+
+                        <a href="https://addons.mozilla.org/en-US/firefox/addon/universal-ai-backup/" 
+                           target="_blank" rel="noopener noreferrer"
+                           style="display: flex; align-items: center; gap: 15px; background: rgba(255, 95, 21, 0.1); 
+                                  border: 2px solid #ff5f15; padding: 15px 20px; border-radius: 12px; 
+                                  text-decoration: none; color: white; transition: all 0.3s ease;"
+                           onmouseover="this.style.background='rgba(255, 95, 21, 0.2)'; this.style.transform='translateX(5px)'"
+                           onmouseout="this.style.background='rgba(255, 95, 21, 0.1)'; this.style.transform='translateX(0)'"
+                           onclick="setTimeout(() => document.getElementById('installModal')?.remove(), 300)">
+                            <span style="font-size: 32px;">🛡️</span>
+                            <div style="text-align: left;">
+                                <div style="font-weight: 700; font-size: 16px;">Firefox</div>
+                                <div style="font-size: 12px; color: #94a3b8;">Privacy-focused</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/universal-ai-backup/onbohbnihgaefnhoepdogeljoicpaibm" 
+                           target="_blank" rel="noopener noreferrer"
+                           style="display: flex; align-items: center; gap: 15px; background: rgba(0, 120, 212, 0.1); 
+                                  border: 2px solid #0078d4; padding: 15px 20px; border-radius: 12px; 
+                                  text-decoration: none; color: white; transition: all 0.3s ease;"
+                           onmouseover="this.style.background='rgba(0, 120, 212, 0.2)'; this.style.transform='translateX(5px)'"
+                           onmouseout="this.style.background='rgba(0, 120, 212, 0.1)'; this.style.transform='translateX(0)'"
+                           onclick="setTimeout(() => document.getElementById('installModal')?.remove(), 300)">
+                            <span style="font-size: 32px;">⚡</span>
+                            <div style="text-align: left;">
+                                <div style="font-weight: 700; font-size: 16px;">Edge</div>
+                                <div style="font-size: 12px; color: #94a3b8;">Windows default</div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <p style="color: #64748b; font-size: 13px; margin-bottom: 20px;">
+                        💡 Brave users: Install from Chrome Web Store
+                    </p>
                     
                     <br>
                     
