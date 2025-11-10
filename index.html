@@ -659,116 +659,146 @@
 
         <!-- Hero -->
         <section class="hero">
-            <h1>Professional Backup<br>for AI Conversations</h1>
-            <p class="subtitle">Export and archive your conversations from all major AI platforms</p>
-            <div class="platforms">
-                <span class="platform-badge">Claude</span>
-                <span class="platform-badge">ChatGPT</span>
-                <span class="platform-badge">Gemini</span>
-                <span class="platform-badge">Grok</span>
-                <span class="platform-badge">Copilot</span>
-                <span class="platform-badge">Perplexity</span>
+            <!-- Alert Banner -->
+            <div style="
+                display: inline-block;
+                background: rgba(239, 68, 68, 0.1);
+                border: 1px solid rgba(239, 68, 68, 0.3);
+                border-radius: 8px;
+                padding: 8px 16px;
+                margin-bottom: 20px;
+                font-size: 14px;
+                color: #fca5a5;
+                font-weight: 600;
+            ">
+                ⚠️ OpenAI outage yesterday: Users lost hours of work
             </div>
-            <a href="#pricing" class="cta-button">Get Started Free</a>
-        </section>
 
-        <!-- Features -->
-        <section id="features" class="card">
-            <h2>Powerful Features</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <span class="feature-icon">💾</span>
-                    <h3>Multi-Platform Support</h3>
-                    <p>Backup conversations from Claude, ChatGPT, Gemini, Grok, Copilot, and Perplexity all in one
-                        place.</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">📊</span>
-                    <h3>Multiple Export Formats</h3>
-                    <p>Export to JSON, Markdown, HTML, Text, or ZIP archives. Choose the format that works for you.</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">⚡</span>
-                    <h3>One-Click Backup</h3>
-                    <p>Floating button and keyboard shortcuts make backing up your conversations effortless.</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🔄</span>
-                    <h3>Auto-Backup</h3>
-                    <p>Schedule automatic backups so you never lose important conversations. (Pro tier)</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">💻</span>
-                    <h3>Code Extraction</h3>
-                    <p>Automatically extract and organize code snippets from your conversations. (Pro tier)</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🔒</span>
-                    <h3>Privacy First</h3>
-                    <p>All processing happens locally on your device. Your conversations never leave your computer.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing -->
-        <section id="pricing" class="card">
-            <h2>Choose Your Plan</h2>
-            <div class="pricing-grid">
-                <div class="plan" onclick="selectPlan('free')">
-                    <h3>Free</h3>
-                    <div class="price">$0<span>/month</span></div>
-                    <ul>
-                        <li>10 exports per day</li>
-                        <li>1 AI platform</li>
-                        <li>Max 50 messages per export</li>
-                        <li>Basic formats (JSON, Markdown, HTML, Text)</li>
-                        <li>Floating button & shortcuts</li>
-                    </ul>
-                    <button class="plan-button">Get Started</button>
-                </div>
-
-                <div class="plan featured" onclick="selectPlan('starter')">
-                    <h3>Starter</h3>
-                    <div class="price">$19<span>/month</span></div>
-                    <ul>
-                        <li>100 exports per month</li>
-                        <li>3 AI platforms</li>
-                        <li>Max 200 messages per export</li>
-                        <li>All formats including ZIP</li>
-                        <li>Export history</li>
-                        <li>Custom formatting</li>
-                        <li>Email support (48h response)</li>
-                    </ul>
-                    <button class="plan-button">Subscribe Now</button>
-                </div>
-
-                <div class="plan" onclick="selectPlan('pro')">
-                    <h3>Pro</h3>
-                    <div class="price">$39<span>/month</span></div>
-                    <ul>
-                        <li>Unlimited exports</li>
-                        <li>All AI platforms</li>
-                        <li>Unlimited message length</li>
-                        <li>All formats</li>
-                        <li>Auto-backup scheduling</li>
-                        <li>Code extraction</li>
-                        <li>Bulk operations</li>
-                        <li>Export analytics</li>
-                        <li>Priority support (24h response)</li>
-                    </ul>
-                    <button class="plan-button">Subscribe Now</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Support -->
-        <section class="card">
-            <h2>Need Help?</h2>
-            <p style="text-align: center; color: var(--text-secondary); font-size: 1.1em;">
-                Contact us at <a href="mailto:aibackuppro@gmail.com"
-                    style="color: var(--purple); font-weight: 600;">aibackuppro@gmail.com</a>
+            <h1>Lost an AI conversation?<br>
+                <span style="background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+                      -webkit-background-clip: text;
+                      -webkit-text-fill-color: transparent;">Never again.</span>
+            </h1>
+            <p class="subtitle">Backup your ChatGPT, Claude, and Gemini conversations before they disappear.
+                <strong style="color: var(--text-primary);">Free forever.</strong>
             </p>
-        </section>
+
+            <!-- Social Proof -->
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                margin-bottom: 30px;
+                font-size: 14px;
+                color: var(--text-muted);
+            ">
+                <span>⭐⭐⭐⭐⭐</span>
+                <span>•</span>
+                <span>Chrome • Firefox • Edge</span>
+                <span>•</span>
+                <span style="color: var(--success); font-weight: 600;">Free tier</span>
+            </div>
+
+            <!-- Features -->
+            <section id="features" class="card">
+                <h2>Powerful Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">💾</span>
+                        <h3>Works Everywhere</h3>
+                        <p>Backup conversations from Claude, ChatGPT, Gemini, Grok, Copilot, and Perplexity all in one
+                            place.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <h3>Any Format You Need</h3>
+                        <p>Export to JSON, Markdown, HTML, Text, or ZIP archives. Choose the format that works for you.
+                        </p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <h3>One-Click Backup</h3>
+                        <p>Floating button and keyboard shortcuts make backing up your conversations effortless.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔄</span>
+                        <h3>Set It & Forget It</h3>
+                        <p>Schedule automatic backups so you never lose important conversations. (Pro tier)</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💻</span>
+                        <h3>Code Extraction</h3>
+                        <p>Automatically extract and organize code snippets from your conversations. (Pro tier)</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔒</span>
+                        <h3>100% Private</h3>
+                        <p>All processing happens locally on your device. Your conversations never leave your computer.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing -->
+            <section id="pricing" class="card">
+                <h2>Choose Your Plan</h2>
+                <div class="pricing-grid">
+                    <div class="plan" onclick="selectPlan('free')">
+                        <h3>Free</h3>
+                        <div class="price">$0<span>/month</span></div>
+                        <ul>
+                            <li>10 exports per day</li>
+                            <li>1 AI platform</li>
+                            <li>Max 50 messages per export</li>
+                            <li>Basic formats (JSON, Markdown, HTML, Text)</li>
+                            <li>Floating button & shortcuts</li>
+                        </ul>
+                        <button class="plan-button">Get Started</button>
+                    </div>
+
+                    <div class="plan featured" onclick="selectPlan('starter')">
+                        <h3>Starter</h3>
+                        <div class="price">$19<span>/month</span></div>
+                        <ul>
+                            <li>100 exports per month</li>
+                            <li>3 AI platforms</li>
+                            <li>Max 200 messages per export</li>
+                            <li>All formats including ZIP</li>
+                            <li>Export history</li>
+                            <li>Custom formatting</li>
+                            <li>Email support (48h response)</li>
+                        </ul>
+                        <button class="plan-button">Subscribe Now</button>
+                    </div>
+
+                    <div class="plan" onclick="selectPlan('pro')">
+                        <h3>Pro</h3>
+                        <div class="price">$39<span>/month</span></div>
+                        <ul>
+                            <li>Unlimited exports</li>
+                            <li>All AI platforms</li>
+                            <li>Unlimited message length</li>
+                            <li>All formats</li>
+                            <li>Auto-backup scheduling</li>
+                            <li>Code extraction</li>
+                            <li>Bulk operations</li>
+                            <li>Export analytics</li>
+                            <li>Priority support (24h response)</li>
+                        </ul>
+                        <button class="plan-button">Subscribe Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support -->
+            <section class="card">
+                <h2>Need Help?</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1em;">
+                    Contact us at <a href="mailto:aibackuppro@gmail.com"
+                        style="color: var(--purple); font-weight: 600;">aibackuppro@gmail.com</a>
+                </p>
+            </section>
     </div>
 
     <!-- Footer -->
