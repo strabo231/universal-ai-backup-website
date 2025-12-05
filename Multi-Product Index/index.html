@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Backup Pro - Browser Extensions for Productivity</title>
+    <meta name="description" content="Professional browser extensions: Universal AI Backup for ChatGPT, Claude, Gemini conversations. Tab Manager Pro for efficient tab management.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --purple: #8b5cf6;
+            --pink: #ec4899;
+            --blue: #3b82f6;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --success: #10b981;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 10%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+            filter: blur(80px);
+            z-index: 0;
+            animation: breathe 12s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes breathe {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+        
+        /* Navigation */
+        .nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; margin-bottom: 20px; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+        }
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        /* Product Selector Tabs */
+        .product-selector {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 15px;
+        }
+        .product-tab {
+            padding: 14px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .product-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .product-tab.active {
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        /* Product Content Sections */
+        .product-content { display: none; }
+        .product-content.active { display: block; }
+
+        /* Hero */
+        .hero { text-align: center; padding: 60px 20px; margin-bottom: 60px; }
+        .hero h1 {
+            font-size: clamp(2.5em, 5vw, 4em);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .hero .subtitle {
+            font-size: clamp(1.2em, 2.5vw, 1.5em);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            color: white;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: var(--transition);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.6);
+        }
+
+        /* Card */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--purple), var(--pink), var(--purple));
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .card h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+        }
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--purple);
+            transform: translateY(-5px);
+        }
+        .feature-icon { font-size: 2em; margin-bottom: 15px; display: block; }
+        .feature-item h3 { font-size: 1.2em; margin-bottom: 10px; color: var(--text-primary); }
+        .feature-item p { color: var(--text-secondary); font-size: 0.95em; }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .plan {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        .plan:hover {
+            transform: translateY(-8px);
+            border-color: var(--purple);
+            box-shadow: 0 15px 50px rgba(139, 92, 246, 0.3);
+        }
+        .plan.featured {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
+            border-color: var(--purple);
+            transform: scale(1.05);
+        }
+        .plan h3 { font-size: 1.8em; margin-bottom: 15px; color: var(--text-primary); }
+        .plan .price {
+            font-size: 3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+        }
+        .plan ul { list-style: none; margin: 25px 0; padding: 0; text-align: left; }
+        .plan li {
+            padding: 12px 0;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .plan li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer { text-align: center; padding: 60px 20px 40px; color: var(--text-muted); }
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+        footer a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .product-selector { flex-direction: column; }
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="logo">
+                <div class="logo-icon">🔧</div>
+                <div class="logo-text">AI Backup Pro</div>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </nav>
+
+        <!-- Product Selector -->
+        <div class="product-selector">
+            <button class="product-tab active" onclick="switchProduct('ai-backup')">
+                💾 Universal AI Backup
+            </button>
+            <button class="product-tab" onclick="switchProduct('tab-manager')">
+                📑 Tab Manager Pro
+            </button>
+        </div>
+
+        <!-- AI BACKUP CONTENT -->
+        <div id="ai-backup-content" class="product-content active">
+            <section class="hero">
+                <h1>Lost an AI conversation?<br><span>Never again.</span></h1>
+                <p class="subtitle">Backup your ChatGPT, Claude, and Gemini conversations before they disappear. <strong>Free forever.</strong></p>
+                <button class="cta-button" onclick="showInstallModal('ai-backup')">Get Started Free</button>
+            </section>
+
+            <section id="features" class="card">
+                <h2>Powerful Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">💾</span>
+                        <h3>Works Everywhere</h3>
+                        <p>Backup conversations from Claude, ChatGPT, Gemini, Grok, Copilot, and Perplexity.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <h3>Any Format</h3>
+                        <p>Export to JSON, Markdown, HTML, Text, or ZIP archives.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <h3>One-Click Backup</h3>
+                        <p>Floating button and keyboard shortcuts make backups effortless.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔒</span>
+                        <h3>100% Private</h3>
+                        <p>All processing happens locally. Your conversations never leave your device.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="card">
+                <h2>Choose Your Plan</h2>
+                <div class="pricing-grid">
+                    <div class="plan">
+                        <h3>Free</h3>
+                        <div class="price">$0</div>
+                        <ul>
+                            <li>10 exports per day</li>
+                            <li>1 AI platform</li>
+                            <li>Basic formats</li>
+                        </ul>
+                        <button class="cta-button" onclick="showInstallModal('ai-backup')">Get Started</button>
+                    </div>
+                    <div class="plan featured">
+                        <h3>Pro</h3>
+                        <div class="price">$39</div>
+                        <ul>
+                            <li>Unlimited exports</li>
+                            <li>All AI platforms</li>
+                            <li>Auto-backup</li>
+                            <li>Code extraction</li>
+                        </ul>
+                        <button class="cta-button">Subscribe Now</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB MANAGER CONTENT -->
+        <div id="tab-manager-content" class="product-content">
+            <section class="hero">
+                <h1>Too many tabs?<br><span>Take control.</span></h1>
+                <p class="subtitle">Beautiful tab manager with real suspend, sessions, and modern design. <strong>Coming soon.</strong></p>
+                <button class="cta-button" onclick="showInstallModal('tab-manager')">Get Early Access</button>
+            </section>
+
+            <section id="features" class="card">
+                <h2>Powerful Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">💤</span>
+                        <h3>Real Tab Suspend</h3>
+                        <p>Actually unload tabs from memory. Save up to 95% RAM usage.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📁</span>
+                        <h3>Smart Sessions</h3>
+                        <p>Save and restore tab groups. Perfect for project switching.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎨</span>
+                        <h3>Beautiful Design</h3>
+                        <p>Modern sidebar interface that actually looks good.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <h3>Lightning Fast</h3>
+                        <p>Keyboard shortcuts for everything. Never touch your mouse.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card" style="text-align: center;">
+                <h2>Coming Soon</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Tab Manager Pro is currently in development. Get notified when it launches!</p>
+                <input type="email" placeholder="your@email.com" style="padding: 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; font-size: 1em; max-width: 400px; width: 100%; margin-bottom: 15px;">
+                <br>
+                <button class="cta-button">Notify Me</button>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p style="margin-top: 20px;">© 2025 AI Backup Pro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchProduct(product) {
+            // Update tabs
+            document.querySelectorAll('.product-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.product-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(product + '-content').classList.add('active');
+        }
+
+        function showInstallModal(product) {
+            if (product === 'ai-backup') {
+                // Your existing install modal code
+                alert('Install modal for AI Backup');
+            } else {
+                alert('Tab Manager Pro coming soon! Sign up to be notified.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,305 +1,581 @@
-Universal AI Backup - Subscription Terms of Service
-Copyright (c) 2025 AI Backup Pro. All Rights Reserved.
-Last Updated: January 15, 2025
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - ProTools</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-IMPORTANT: READ CAREFULLY BEFORE USING THIS SOFTWARE
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
 
-By installing and using Universal AI Backup ("Software"), you agree to these terms.
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-═══════════════════════════════════════════════════════
-1. SUBSCRIPTION PLANS & FEATURES
-═══════════════════════════════════════════════════════
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
 
-1.1 FREE PLAN (No Payment Required)
-You may use the Software with the following limitations:
-- Export formats: JSON, Markdown, HTML, Text only
-- Maximum 10 exports per day
-- Maximum 50 messages per conversation
-- 1 AI platform supported
-- Features: Basic export, keyboard shortcuts, floating button
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
 
-1.2 STARTER PLAN ($19 USD/month)
-Monthly subscription includes:
-- All Free features plus:
-- Export formats: All basic formats plus ZIP archives
-- Maximum 100 exports per month
-- Maximum 200 messages per conversation
-- 3 AI platforms supported
-- Additional features: Sequential guide, export history, custom formatting
+        .last-updated {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
 
-1.3 PRO PLAN ($39 USD/month)
-Monthly subscription includes:
-- All Starter features plus:
-- Unlimited exports per month
-- Unlimited conversation length
-- All AI platforms supported
-- Additional features: Auto-backup, bulk operations, export analytics, 
-  priority support, custom templates
+        .important-notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-weight: 600;
+        }
 
-═══════════════════════════════════════════════════════
-2. SUBSCRIPTION TERMS
-═══════════════════════════════════════════════════════
+        h2 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
 
-2.1 Automatic Renewal
-- Subscriptions automatically renew monthly unless cancelled
-- You will be charged on the same day each month
-- Renewal charges occur 24 hours before the subscription period ends
-- You accept automatic billing by subscribing
+        h2:first-of-type {
+            margin-top: 20px;
+            border-top: none;
+            padding-top: 0;
+        }
 
-2.2 Payment Methods
-- We accept credit/debit cards via Stripe
-- We accept cryptocurrency via Coinbase Commerce
-- Payment method must remain valid for automatic renewals
+        h3 {
+            color: #555;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
 
-2.3 Cancellation
-- You may cancel anytime from your account settings
-- Cancellations take effect at the end of the current billing period
-- You retain access to paid features until the period ends
-- No partial refunds for mid-cycle cancellations
-- To cancel: Contact support@[your-domain.com]
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
 
-2.4 Changes to Pricing
-- We may change subscription prices with 30 days notice
-- Price changes apply to renewals after the notice period
-- You may cancel before the price change takes effect
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
 
-2.5 License Keys
-- Each subscription tier receives a unique license key
-- License keys are tied to your email address
-- Maximum 3 device activations per license key
-- Keys cannot be shared, resold, or transferred
-- We may deactivate keys suspected of abuse
+        li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
 
-═══════════════════════════════════════════════════════
-3. RESTRICTIONS
-═══════════════════════════════════════════════════════
+        .section-icon {
+            display: inline-block;
+            margin-right: 8px;
+        }
 
-You may NOT:
-- Reverse engineer or attempt to extract the license validation system
-- Share or resell license keys
-- Bypass or disable license validation
-- Use the Software to create competing products
-- Remove copyright or license notices
-- Use a single license for multiple users
+        strong {
+            color: #667eea;
+            font-weight: 600;
+        }
 
-═══════════════════════════════════════════════════════
-4. INTELLECTUAL PROPERTY & CHROME EXTENSION NOTICE
-═══════════════════════════════════════════════════════
+        .highlight {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
 
-4.1 Ownership and Copyright
-- The Software is proprietary to [Your Company]
-- All code, designs, and documentation are copyrighted
-- This is licensed software, not sold software
-- We retain all intellectual property rights
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
 
-4.2 Chrome Extension Architecture Notice
-You acknowledge and agree that:
-- As a Chrome extension, the Software's code files are stored 
-  locally on your device and are accessible through standard 
-  Chrome extension mechanisms
-- This technical accessibility does NOT constitute:
-  * A license to use, copy, modify, or redistribute the code
-  * Permission to create derivative works
-  * A waiver of our intellectual property rights
-  * Authorization to bypass license validation
-- Viewing code during normal operation or inspection does not 
-  grant any additional rights beyond those explicitly granted 
-  in this agreement
+        .pricing-box {
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
 
-4.3 Restrictions on Use
-Even though code files are accessible, you expressly agree NOT to:
-- Copy or reproduce the Software or any portion thereof
-- Modify, adapt, translate, or create derivative works
-- Reverse engineer the license validation system
-- Redistribute, sublicense, rent, lease, or lend the Software
-- Remove or alter copyright, trademark, or license notices
-- Extract components or code for use in other projects
-- Share methods or tools to bypass license validation
+        .pricing-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
 
-4.4 Permitted Viewing
-You may view the code for:
-- Personal educational purposes
-- Security auditing of your own installation
-- Debugging issues with the Software
-- Understanding functionality for proper use
+        .contact-box {
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
 
-This does NOT grant rights to reproduce, modify, or share 
-such code or knowledge derived from it.
+        .contact-box a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-4.5 Open Source Components
-This Software includes third-party open source components 
-which are licensed under their respective licenses (see Section 12).
-These components retain their original licenses. This agreement 
-applies only to our proprietary code and components.
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e9ecef;
+            color: #666;
+            font-size: 0.9em;
+        }
 
-═══════════════════════════════════════════════════════
-5. DATA & PRIVACY
-═══════════════════════════════════════════════════════
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
 
-5.1 Local Processing
-- Conversation data is processed locally on your device
-- No conversation content is transmitted to our servers
+            h1 {
+                font-size: 1.8em;
+            }
 
-5.2 License Validation
-- License validation requires internet connectivity
-- Only your license key and email are transmitted for validation
-- License validation occurs: on activation, periodically, and when features are used
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Terms of Service</h1>
+        <p class="subtitle">Universal AI Backup & Tab Manager Pro</p>
+        <p class="last-updated">Last Updated: December 4, 2025</p>
 
-5.3 Analytics (Optional)
-- Anonymous usage statistics may be collected if you opt-in
-- Statistics include: export counts, feature usage, errors
-- No personal or conversation data is included
+        <div class="important-notice">
+            IMPORTANT: READ CAREFULLY BEFORE USING THIS SOFTWARE<br>
+            By installing and using our extensions, you agree to these terms.
+        </div>
 
-5.4 Data Retention After Cancellation
-- Exported files remain on your device after cancellation
-- Your license key and subscription history are retained for 90 days
-- You may request data deletion by contacting support
+        <!-- Section 0: Scope -->
+        <h2><span class="section-icon">📱</span> 0. SCOPE</h2>
+        <p>These terms apply to both:</p>
+        <ul>
+            <li><strong>Universal AI Backup</strong> - AI conversation backup extension</li>
+            <li><strong>Tab Manager Pro</strong> - Professional tab management extension</li>
+        </ul>
 
-See our Privacy Policy at https://strabo231.github.io/universal-ai-backup-website/privacy for complete details.
+        <!-- Section 1: Subscription Plans -->
+        <h2><span class="section-icon">💰</span> 1. SUBSCRIPTION PLANS & FEATURES</h2>
 
-═══════════════════════════════════════════════════════
-6. REFUND POLICY
-═══════════════════════════════════════════════════════
+        <div class="pricing-box">
+            <h4>1.1 TAB MANAGER PRO ($4.99 USD/month)</h4>
+            <p>Monthly subscription includes:</p>
+            <ul>
+                <li>Smart duplicate tab detection</li>
+                <li>Advanced search & filtering (simple, regex, fuzzy)</li>
+                <li>Auto-suspend inactive tabs</li>
+                <li>Session save & restore</li>
+                <li>Keyboard shortcuts</li>
+                <li>Priority support</li>
+            </ul>
+        </div>
 
-6.1 30-Day Money-Back Guarantee
-- First-time subscribers may request a full refund within 30 days
-- Refunds are processed to the original payment method within 7-10 business days
-- Abuse of refund policy (multiple signups/cancellations) may result in denial
+        <div class="pricing-box">
+            <h4>1.2 UNIVERSAL AI BACKUP - STARTER PLAN ($19 USD/month)</h4>
+            <p>Monthly subscription includes:</p>
+            <ul>
+                <li>Export formats: JSON, Markdown, HTML, Text, ZIP archives</li>
+                <li>Maximum 100 exports per month</li>
+                <li>Maximum 200 messages per conversation</li>
+                <li>3 AI platforms supported</li>
+                <li>Sequential guide, export history, custom formatting</li>
+            </ul>
+        </div>
 
-6.2 No Refunds After 30 Days
-- No refunds for renewals beyond the first 30 days
-- No partial refunds for early cancellation
-- Technical issues may be eligible for prorated refunds at our discretion
+        <div class="pricing-box">
+            <h4>1.3 UNIVERSAL AI BACKUP - PRO PLAN ($39 USD/month)</h4>
+            <p>Monthly subscription includes:</p>
+            <ul>
+                <li>All Starter features plus:</li>
+                <li>Unlimited exports per month</li>
+                <li>Unlimited conversation length</li>
+                <li>All AI platforms supported (10+)</li>
+                <li>Auto-backup, bulk operations, export analytics</li>
+                <li>Priority support, custom templates</li>
+            </ul>
+        </div>
 
-6.3 How to Request Refund
-- Email: aibaackuppro@gmail.com
-- Include: License key, purchase date, reason for refund
+        <div class="pricing-box">
+            <h4>1.4 PRODUCTIVITY BUNDLE - STARTER ($19 USD/month)</h4>
+            <p>Includes:</p>
+            <ul>
+                <li>Tab Manager Pro (full access)</li>
+                <li>Universal AI Backup (Starter tier)</li>
+                <li>One license key for both extensions</li>
+            </ul>
+        </div>
 
-═══════════════════════════════════════════════════════
-7. UPDATES & SUPPORT
-═══════════════════════════════════════════════════════
+        <div class="pricing-box">
+            <h4>1.5 PRODUCTIVITY BUNDLE - PRO ($39 USD/month)</h4>
+            <p>Includes:</p>
+            <ul>
+                <li>Tab Manager Pro (full access)</li>
+                <li>Universal AI Backup (Pro tier)</li>
+                <li>One license key for both extensions</li>
+                <li>Best value for power users</li>
+            </ul>
+        </div>
 
-7.1 Software Updates
-- Updates and bug fixes are provided automatically
-- Major version upgrades are included in your subscription
-- Updates may add features or improve existing functionality
+        <!-- Section 2: Subscription Terms -->
+        <h2><span class="section-icon">📋</span> 2. SUBSCRIPTION TERMS</h2>
 
-7.2 Technical Support
-- Free Plan: Community support only (documentation, FAQ)
-- Starter Plan: Email support (48-hour response time)
-- Pro Plan: Priority email support (24-hour response time)
+        <h3>2.1 Automatic Renewal</h3>
+        <ul>
+            <li>Subscriptions automatically renew monthly unless cancelled</li>
+            <li>You will be charged on the same day each month</li>
+            <li>Renewal charges occur 24 hours before the subscription period ends</li>
+            <li>You accept automatic billing by subscribing</li>
+        </ul>
 
-7.3 Service Availability
-- We strive for 99.9% uptime for license validation servers
-- Scheduled maintenance will be announced in advance
-- No compensation for temporary service interruptions under 24 hours
+        <h3>2.2 Payment Methods</h3>
+        <ul>
+            <li>We accept credit/debit cards via Stripe</li>
+            <li>We accept cryptocurrency via Coinbase Commerce (select products)</li>
+            <li>Payment method must remain valid for automatic renewals</li>
+        </ul>
 
-═══════════════════════════════════════════════════════
-8. TERMINATION
-═══════════════════════════════════════════════════════
+        <h3>2.3 Cancellation</h3>
+        <ul>
+            <li>You may cancel anytime from your account settings</li>
+            <li>Cancellations take effect at the end of the current billing period</li>
+            <li>You retain access to paid features until the period ends</li>
+            <li>No partial refunds for mid-cycle cancellations</li>
+            <li>To cancel: Contact <a href="mailto:aibackuppro@gmail.com">aibackuppro@gmail.com</a></li>
+        </ul>
 
-8.1 By You
-- Cancel anytime; access continues until period ends
-- You must delete the Software if subscription expires
+        <h3>2.4 Changes to Pricing</h3>
+        <ul>
+            <li>We may change subscription prices with 30 days notice</li>
+            <li>Price changes apply to renewals after the notice period</li>
+            <li>You may cancel before the price change takes effect</li>
+        </ul>
 
-8.2 By Us
-- We may terminate your subscription for:
-  * Violation of these terms
-  * Payment failure after 3 attempts
-  * Abusive or fraudulent behavior
-  * Sharing license keys
-- Termination is immediate with no refund for violations
+        <h3>2.5 License Keys</h3>
+        <ul>
+            <li>Each subscription tier receives a unique license key</li>
+            <li>License keys are tied to your email address</li>
+            <li>Maximum 3 device activations per license key</li>
+            <li>Bundle licenses work for both extensions with one key</li>
+            <li>Keys cannot be shared, resold, or transferred</li>
+            <li>We may deactivate keys suspected of abuse</li>
+        </ul>
 
-═══════════════════════════════════════════════════════
-9. WARRANTY DISCLAIMER
-═══════════════════════════════════════════════════════
+        <h3>2.6 Upgrades & Downgrades</h3>
+        <div class="highlight">
+            <strong>Auto-Upgrade Feature:</strong> When you upgrade your plan, your existing license key is automatically updated with new features. No need to re-activate!
+        </div>
+        <ul>
+            <li>You may upgrade or downgrade between tiers at any time</li>
+            <li>Upgrades: Your existing license key is updated with new features</li>
+            <li>Downgrades: Changes take effect at the end of current billing period</li>
+            <li>No pro-rated refunds for downgrades</li>
+        </ul>
 
-THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. WE DO NOT 
-GUARANTEE:
-- Uninterrupted or error-free operation
-- Compatibility with all AI platforms forever
-- That the Software meets your specific needs
-- Data accuracy or completeness of exports
+        <!-- Section 3: Restrictions -->
+        <h2><span class="section-icon">🚫</span> 3. RESTRICTIONS</h2>
+        <p>You may <strong>NOT</strong>:</p>
+        <ul>
+            <li>Reverse engineer or attempt to extract the license validation system</li>
+            <li>Share or resell license keys</li>
+            <li>Bypass or disable license validation</li>
+            <li>Use the Software to create competing products</li>
+            <li>Remove copyright or license notices</li>
+            <li>Use a single license for multiple users</li>
+            <li>Modify, decompile, or create derivative works</li>
+        </ul>
 
-YOU ASSUME ALL RISK FOR USING THE SOFTWARE.
+        <!-- Section 4: Intellectual Property -->
+        <h2><span class="section-icon">©️</span> 4. INTELLECTUAL PROPERTY & EXTENSION NOTICE</h2>
 
-═══════════════════════════════════════════════════════
-10. LIMITATION OF LIABILITY
-═══════════════════════════════════════════════════════
+        <h3>4.1 Ownership and Copyright</h3>
+        <ul>
+            <li>The Software is proprietary to ProTools</li>
+            <li>All code, designs, and documentation are copyrighted</li>
+            <li>This is licensed software, not sold software</li>
+            <li>We retain all intellectual property rights</li>
+        </ul>
 
-OUR TOTAL LIABILITY IS LIMITED TO THE AMOUNT YOU PAID IN THE LAST 12 MONTHS.
+        <h3>4.2 Browser Extension Architecture Notice</h3>
+        <p>You acknowledge and agree that:</p>
+        <ul>
+            <li>As browser extensions, the Software's code files are stored locally on your device and are accessible through standard browser extension mechanisms</li>
+            <li>This technical accessibility does NOT constitute:
+                <ul>
+                    <li>A license to use, copy, modify, or redistribute the code</li>
+                    <li>Permission to create derivative works</li>
+                    <li>A waiver of our intellectual property rights</li>
+                    <li>Authorization to bypass license validation</li>
+                </ul>
+            </li>
+            <li>Viewing code during normal operation or inspection does not grant any additional rights beyond those explicitly granted in this agreement</li>
+        </ul>
 
-WE ARE NOT LIABLE FOR:
-- Loss of data, profits, or business opportunities
-- Indirect, incidental, or consequential damages
-- Issues caused by third-party AI platforms changing their interfaces
-- Your inability to access AI platforms
+        <h3>4.3 Restrictions on Use</h3>
+        <p>Even though code files are accessible, you expressly agree NOT to:</p>
+        <ul>
+            <li>Copy or reproduce the Software or any portion thereof</li>
+            <li>Modify, adapt, translate, or create derivative works</li>
+            <li>Reverse engineer the license validation system</li>
+            <li>Redistribute, sublicense, rent, lease, or lend the Software</li>
+            <li>Remove or alter copyright, trademark, or license notices</li>
+            <li>Extract components or code for use in other projects</li>
+            <li>Share methods or tools to bypass license validation</li>
+        </ul>
 
-═══════════════════════════════════════════════════════
-11. CALIFORNIA & US CONSUMER RIGHTS
-═══════════════════════════════════════════════════════
+        <h3>4.4 Permitted Viewing</h3>
+        <p>You may view the code for:</p>
+        <ul>
+            <li>Personal educational purposes</li>
+            <li>Security auditing of your own installation</li>
+            <li>Debugging issues with the Software</li>
+            <li>Understanding functionality for proper use</li>
+        </ul>
+        <p>This does NOT grant rights to reproduce, modify, or share such code or knowledge derived from it.</p>
 
-11.1 Auto-Renewal Disclosure (California AB 2863)
-- You authorize automatic monthly charges
-- We will notify you before charging a different amount
-- You may cancel by: Emailing support@[your-domain.com]
+        <h3>4.5 Open Source Components</h3>
+        <p>This Software includes third-party open source components which are licensed under their respective licenses (see Section 12). These components retain their original licenses. This agreement applies only to our proprietary code and components.</p>
 
-11.2 Right to Cancel
-- You have the right to cancel your subscription at any time
-- Cancellation takes effect at the end of your billing cycle
+        <!-- Section 5: Data & Privacy -->
+        <h2><span class="section-icon">🔒</span> 5. DATA & PRIVACY</h2>
 
-═══════════════════════════════════════════════════════
-12. THIRD-PARTY COMPONENTS
-═══════════════════════════════════════════════════════
+        <h3>5.1 Local Processing</h3>
+        <ul>
+            <li>Universal AI Backup: Conversation data processed locally on your device</li>
+            <li>Tab Manager Pro: Tab information processed locally on your device</li>
+            <li>No content data is transmitted to our servers</li>
+        </ul>
 
-JSZip Library - MIT License
-Copyright (c) 2009-2016 Stuart Knightley
-https://github.com/Stuk/jszip
+        <h3>5.2 License Validation</h3>
+        <ul>
+            <li>License validation requires internet connectivity</li>
+            <li>Only your license key and email are transmitted for validation</li>
+            <li>License validation occurs: on activation, periodically, and when features are used</li>
+        </ul>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+        <h3>5.3 Analytics</h3>
+        <ul>
+            <li>We do NOT collect usage analytics or telemetry</li>
+            <li>No behavioral tracking or data collection</li>
+        </ul>
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+        <h3>5.4 Data Retention After Cancellation</h3>
+        <ul>
+            <li>Exported files remain on your device after cancellation</li>
+            <li>Saved sessions remain on your device after cancellation</li>
+            <li>Your license key and subscription history are retained for 90 days</li>
+            <li>You may request data deletion by contacting support</li>
+        </ul>
 
-═══════════════════════════════════════════════════════
-13. GOVERNING LAW & DISPUTES
-═══════════════════════════════════════════════════════
+        <p>See our <a href="privacy.html" style="color: #667eea;">Privacy Policy</a> for complete details.</p>
 
-13.1 This agreement is governed by the laws of [Your State/Country]
+        <!-- Section 6: Refund Policy -->
+        <h2><span class="section-icon">💵</span> 6. REFUND POLICY</h2>
 
-13.2 Dispute Resolution
-- Informal resolution: Contact us first at support@[your-domain.com]
-- Arbitration: Disputes will be resolved through binding arbitration
-- Small claims court: You may pursue claims in small claims court
+        <h3>6.1 30-Day Money-Back Guarantee</h3>
+        <ul>
+            <li>First-time subscribers may request a full refund within 30 days</li>
+            <li>Refunds are processed to the original payment method within 7-10 business days</li>
+            <li>Abuse of refund policy (multiple signups/cancellations) may result in denial</li>
+        </ul>
 
-═══════════════════════════════════════════════════════
-14. CHANGES TO TERMS
-═══════════════════════════════════════════════════════
+        <h3>6.2 No Refunds After 30 Days</h3>
+        <ul>
+            <li>No refunds for renewals beyond the first 30 days</li>
+            <li>No partial refunds for early cancellation</li>
+            <li>Technical issues may be eligible for prorated refunds at our discretion</li>
+        </ul>
 
-- We may update these terms with 30 days notice
-- Continued use after notice period constitutes acceptance
-- Material changes will be highlighted in the notification
+        <h3>6.3 How to Request Refund</h3>
+        <ul>
+            <li>Email: <a href="mailto:aibackuppro@gmail.com">aibackuppro@gmail.com</a></li>
+            <li>Include: License key, purchase date, reason for refund</li>
+        </ul>
 
-═══════════════════════════════════════════════════════
-15. CONTACT
-═══════════════════════════════════════════════════════
+        <!-- Section 7: Updates & Support -->
+        <h2><span class="section-icon">🔧</span> 7. UPDATES & SUPPORT</h2>
 
-For questions, support, or cancellations:
-Email: aibackuppro@gmail.com
-Website: https://strabo231.github.io/universal-ai-backup-website/
-Support Hours: 8AM-11PM Mon-Fri, 8AM-8PM Sat-Sun
+        <h3>7.1 Software Updates</h3>
+        <ul>
+            <li>Updates and bug fixes are provided automatically</li>
+            <li>Major version upgrades are included in your subscription</li>
+            <li>Updates may add features or improve existing functionality</li>
+        </ul>
 
-═══════════════════════════════════════════════════════
-16. ENTIRE AGREEMENT
-═══════════════════════════════════════════════════════
+        <h3>7.2 Technical Support</h3>
+        <ul>
+            <li>Tab Manager Pro: Email support (48-hour response time)</li>
+            <li>Universal AI Backup Starter: Email support (48-hour response time)</li>
+            <li>Universal AI Backup Pro: Priority email support (24-hour response time)</li>
+            <li>Productivity Bundles: Priority support</li>
+        </ul>
 
-This agreement, along with our Privacy Policy, constitutes the entire agreement 
-between you and AI Backup Pro regarding the Software.
+        <h3>7.3 Service Availability</h3>
+        <ul>
+            <li>We strive for 99.9% uptime for license validation servers</li>
+            <li>Scheduled maintenance will be announced in advance</li>
+            <li>No compensation for temporary service interruptions under 24 hours</li>
+        </ul>
 
-BY USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND 
-AGREE TO BE BOUND BY THESE TERMS.
+        <!-- Section 8: Termination -->
+        <h2><span class="section-icon">⚠️</span> 8. TERMINATION</h2>
+
+        <h3>8.1 By You</h3>
+        <ul>
+            <li>Cancel anytime; access continues until period ends</li>
+            <li>You must uninstall the Software if subscription expires</li>
+        </ul>
+
+        <h3>8.2 By Us</h3>
+        <p>We may terminate your subscription for:</p>
+        <ul>
+            <li>Violation of these terms</li>
+            <li>Payment failure after 3 attempts</li>
+            <li>Abusive or fraudulent behavior</li>
+            <li>Sharing license keys</li>
+        </ul>
+        <p>Termination is immediate with no refund for violations.</p>
+
+        <!-- Section 9: Warranty Disclaimer -->
+        <h2><span class="section-icon">📢</span> 9. WARRANTY DISCLAIMER</h2>
+        <div class="warning">
+            THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. WE DO NOT GUARANTEE:
+            <ul>
+                <li>Uninterrupted or error-free operation</li>
+                <li>Compatibility with all AI platforms or browsers forever</li>
+                <li>That the Software meets your specific needs</li>
+                <li>Data accuracy or completeness</li>
+            </ul>
+            YOU ASSUME ALL RISK FOR USING THE SOFTWARE.
+        </div>
+
+        <!-- Section 10: Limitation of Liability -->
+        <h2><span class="section-icon">⚖️</span> 10. LIMITATION OF LIABILITY</h2>
+        <div class="warning">
+            <p><strong>OUR TOTAL LIABILITY IS LIMITED TO THE AMOUNT YOU PAID IN THE LAST 12 MONTHS.</strong></p>
+            <p>WE ARE NOT LIABLE FOR:</p>
+            <ul>
+                <li>Loss of data, profits, or business opportunities</li>
+                <li>Indirect, incidental, or consequential damages</li>
+                <li>Issues caused by third-party platforms changing their interfaces</li>
+                <li>Browser updates that affect extension functionality</li>
+            </ul>
+        </div>
+
+        <!-- Section 11: California & US Consumer Rights -->
+        <h2><span class="section-icon">🇺🇸</span> 11. CALIFORNIA & US CONSUMER RIGHTS</h2>
+
+        <h3>11.1 Auto-Renewal Disclosure (California AB 2863)</h3>
+        <ul>
+            <li>You authorize automatic monthly charges</li>
+            <li>We will notify you before charging a different amount</li>
+            <li>You may cancel by: Emailing <a href="mailto:aibackuppro@gmail.com">aibackuppro@gmail.com</a></li>
+        </ul>
+
+        <h3>11.2 Right to Cancel</h3>
+        <ul>
+            <li>You have the right to cancel your subscription at any time</li>
+            <li>Cancellation takes effect at the end of your billing cycle</li>
+        </ul>
+
+        <!-- Section 12: Third-Party Components -->
+        <h2><span class="section-icon">📦</span> 12. THIRD-PARTY COMPONENTS</h2>
+        <div class="highlight">
+            <h4>JSZip Library - MIT License</h4>
+            <p>Copyright (c) 2009-2016 Stuart Knightley<br>
+            <a href="https://github.com/Stuk/jszip" target="_blank">https://github.com/Stuk/jszip</a></p>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                Permission is hereby granted, free of charge, to any person obtaining a copy
+                of this software and associated documentation files (the "Software"), to deal
+                in the Software without restriction, including without limitation the rights
+                to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                copies of the Software, and to permit persons to whom the Software is
+                furnished to do so, subject to the following conditions:
+            </p>
+            <p style="font-size: 0.9em;">
+                The above copyright notice and this permission notice shall be included in all
+                copies or substantial portions of the Software.
+            </p>
+        </div>
+
+        <!-- Section 13: Governing Law -->
+        <h2><span class="section-icon">⚖️</span> 13. GOVERNING LAW & DISPUTES</h2>
+
+        <h3>13.1 Governing Law</h3>
+        <p>This agreement is governed by the laws of the United States.</p>
+
+        <h3>13.2 Dispute Resolution</h3>
+        <ul>
+            <li>Informal resolution: Contact us first at <a href="mailto:aibackuppro@gmail.com">aibackuppro@gmail.com</a></li>
+            <li>Arbitration: Disputes will be resolved through binding arbitration</li>
+            <li>Small claims court: You may pursue claims in small claims court</li>
+        </ul>
+
+        <!-- Section 14: Changes to Terms -->
+        <h2><span class="section-icon">🔄</span> 14. CHANGES TO TERMS</h2>
+        <ul>
+            <li>We may update these terms with 30 days notice</li>
+            <li>Continued use after notice period constitutes acceptance</li>
+            <li>Material changes will be highlighted in the notification</li>
+        </ul>
+
+        <!-- Section 15: Contact -->
+        <h2><span class="section-icon">📧</span> 15. CONTACT</h2>
+        <div class="contact-box">
+            <p><strong>For questions, support, or cancellations:</strong></p>
+            <p>Email: <a href="mailto:aibackuppro@gmail.com">aibackuppro@gmail.com</a></p>
+            <p>Website: <a href="https://strabo231.github.io/universal-ai-backup-website/">https://strabo231.github.io/universal-ai-backup-website/</a></p>
+            <p><strong>Response time:</strong> Within 48 hours</p>
+        </div>
+
+        <!-- Section 16: Entire Agreement -->
+        <h2><span class="section-icon">📜</span> 16. ENTIRE AGREEMENT</h2>
+        <p>This agreement, along with our Privacy Policy, constitutes the entire agreement between you and ProTools regarding the Software.</p>
+        <div class="important-notice" style="margin-top: 20px;">
+            BY USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS.
+        </div>
+
+        <div class="footer">
+            <p>These terms were last updated on <strong>December 4, 2025</strong>.</p>
+            <p style="margin-top: 20px;">© 2025 ProTools. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
