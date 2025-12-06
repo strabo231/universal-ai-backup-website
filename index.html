@@ -533,6 +533,8 @@
         </div>
     </section>
 
+<!-- COMPLETE PRICING SECTION -->
+
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
@@ -541,81 +543,141 @@
                 <p>Choose the plan that works best for you</p>
             </div>
 
-            <div class="pricing-grid">
+            <!-- Bundles Section -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 10px; color: var(--text-primary);">🎯 Best Value - Bundles</h3>
+                <p style="color: var(--text-secondary); font-size: 1.1em;">Get both extensions together and save!</p>
+            </div>
+
+            <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 80px;">
+                <!-- Bundle Starter - MOST POPULAR -->
+                <div class="pricing-card featured">
+                    <div class="badge">MOST POPULAR</div>
+                    <h3>Productivity Bundle - Starter</h3>
+                    <p class="description">Tab Manager Pro + AI Backup Starter</p>
+                    <div class="price">$16</div>
+                    <div class="price-period">per month</div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 8px; border-radius: 8px; margin: 15px 0; color: #10b981; font-weight: 600;">
+                        💰 Save $8/month!
+                    </div>
+                    <ul class="features-list">
+                        <li><strong>Tab Manager Pro (Full)</strong></li>
+                        <li>Smart duplicate detection</li>
+                        <li>Advanced search & auto-suspend</li>
+                        <li>Session save & restore</li>
+                        <li><strong>AI Backup - Starter Tier</strong></li>
+                        <li>3 AI platforms</li>
+                        <li>100 exports per month</li>
+                        <li>All export formats</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/BUNDLE_STARTER_PRICE_ID" class="btn btn-primary" style="width: 100%; text-align: center;">Get Bundle Starter</a>
+                </div>
+
+                <!-- Bundle Pro - BEST VALUE -->
+                <div class="pricing-card featured">
+                    <div class="badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">BEST VALUE</div>
+                    <h3>Productivity Bundle - Pro</h3>
+                    <p class="description">Tab Manager Pro + AI Backup Pro</p>
+                    <div class="price">$32</div>
+                    <div class="price-period">per month</div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 8px; border-radius: 8px; margin: 15px 0; color: #10b981; font-weight: 600;">
+                        💰 Save $12/month!
+                    </div>
+                    <ul class="features-list">
+                        <li><strong>Everything in Bundle Starter</strong></li>
+                        <li><strong>AI Backup - Pro Tier</strong></li>
+                        <li>All AI platforms (10+)</li>
+                        <li>Unlimited exports</li>
+                        <li>Unlimited conversation length</li>
+                        <li>Auto-backup scheduling</li>
+                        <li>Bulk operations</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/BUNDLE_PRO_PRICE_ID" class="btn btn-primary" style="width: 100%; text-align: center;">Get Bundle Pro</a>
+                </div>
+            </div>
+
+            <!-- Individual Products Section -->
+            <div style="text-align: center; margin: 60px 0 40px 0; padding-top: 60px; border-top: 2px solid var(--border);">
+                <h3 style="font-size: 1.8em; margin-bottom: 10px; color: var(--text-primary);">📦 Individual Products</h3>
+                <p style="color: var(--text-secondary); font-size: 1.1em;">Need just one extension? We got you covered</p>
+            </div>
+
+            <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
                 <!-- Tab Manager Pro -->
                 <div class="pricing-card">
                     <h3>Tab Manager Pro</h3>
-                    <p class="description">Perfect for tab hoarders who need organization</p>
+                    <p class="description">Professional tab management</p>
                     <div class="price">$4.99</div>
                     <div class="price-period">per month</div>
                     <ul class="features-list">
                         <li>Smart duplicate detection</li>
-                        <li>Advanced search & filters</li>
+                        <li>Advanced search (regex, fuzzy)</li>
                         <li>Auto-suspend inactive tabs</li>
                         <li>Session save & restore</li>
                         <li>Keyboard shortcuts</li>
                         <li>Priority support</li>
                         <li class="disabled">AI conversation backups</li>
-                        <li class="disabled">Multi-platform AI support</li>
                     </ul>
-                    <a href="price_1SaKIvL2tJizwrF7yd7pSRzr" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                    <a href="https://buy.stripe.com/TMP_PRICE_ID" class="btn btn-primary" style="width: 100%; text-align: center;">Get Tab Manager Pro</a>
+                    <p style="text-align: center; margin-top: 15px; font-size: 0.9em; color: var(--text-secondary);">
+                        Or get it in a bundle and save!
+                    </p>
                 </div>
 
-                <!-- Bundle Starter - MOST POPULAR -->
-                <div class="pricing-card featured">
-                    <div class="badge">MOST POPULAR</div>
-                    <h3>Productivity Bundle</h3>
-                    <p class="description">Both extensions + AI Backup Starter features</p>
+                <!-- AI Backup Starter -->
+                <div class="pricing-card">
+                    <h3>AI Backup - Starter</h3>
+                    <p class="description">Backup AI conversations</p>
                     <div class="price">$19</div>
                     <div class="price-period">per month</div>
                     <ul class="features-list">
-                        <li><strong>Everything in Tab Manager Pro</strong></li>
-                        <li>AI Backup for 3 platforms</li>
+                        <li>3 AI platforms supported</li>
                         <li>100 exports per month</li>
                         <li>200 messages per conversation</li>
-                        <li>Multiple export formats</li>
+                        <li>All export formats (JSON, MD, HTML, ZIP)</li>
                         <li>Export history tracking</li>
                         <li>Custom formatting</li>
-                        <li>Sequential export guide</li>
+                        <li class="disabled">Tab management features</li>
                     </ul>
-                    <a href="price_1SIq55L2tJizwrF7yrOVHOWl" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                    <a href="https://buy.stripe.com/AI_STARTER_PRICE_ID" class="btn btn-primary" style="width: 100%; text-align: center;">Get AI Backup Starter</a>
+                    <p style="text-align: center; margin-top: 15px; font-size: 0.9em; color: var(--text-secondary);">
+                        Bundle with Tab Manager for $16/mo!
+                    </p>
                 </div>
 
-                <!-- Bundle Pro - BEST VALUE -->
+                <!-- AI Backup Pro -->
                 <div class="pricing-card">
-                    <div class="badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">BEST VALUE</div>
-                    <h3>Pro Bundle</h3>
-                    <p class="description">Full access to everything, unlimited</p>
+                    <h3>AI Backup - Pro</h3>
+                    <p class="description">Unlimited AI backups</p>
                     <div class="price">$39</div>
                     <div class="price-period">per month</div>
                     <ul class="features-list">
-                        <li><strong>Everything in Productivity Bundle</strong></li>
-                        <li>Unlimited AI platforms</li>
+                        <li><strong>Everything in Starter</strong></li>
+                        <li>All AI platforms (10+)</li>
                         <li>Unlimited exports</li>
                         <li>Unlimited conversation length</li>
                         <li>Auto-backup scheduling</li>
                         <li>Bulk operations</li>
-                        <li>Export analytics</li>
                         <li>Custom templates</li>
                         <li>Priority support</li>
+                        <li class="disabled">Tab management features</li>
                     </ul>
-                    <a href="price_1SIq6gL2tJizwrF7OotipsO3" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                    <a href="https://buy.stripe.com/AI_PRO_PRICE_ID" class="btn btn-primary" style="width: 100%; text-align: center;">Get AI Backup Pro</a>
+                    <p style="text-align: center; margin-top: 15px; font-size: 0.9em; color: var(--text-secondary);">
+                        Bundle with Tab Manager for $32/mo!
+                    </p>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 60px; padding-top: 60px; border-top: 1px solid var(--border);">
-                <h3 style="font-size: 1.5em; margin-bottom: 20px;">Need just AI Backup?</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 30px;">We offer standalone AI Backup plans too</p>
-                <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
-                    <div>
-                        <div style="font-size: 1.2em; margin-bottom: 10px;">Starter - <strong>$19/mo</strong></div>
-                        <a href="price_1SIq55L2tJizwrF7yrOVHOWl" class="btn btn-secondary">Subscribe</a>
-                    </div>
-                    <div>
-                        <div style="font-size: 1.2em; margin-bottom: 10px;">Pro - <strong>$39/mo</strong></div>
-                        <a href="price_1SIq6gL2tJizwrF7OotipsO3" class="btn btn-secondary">Subscribe</a>
-                    </div>
-                </div>
+            <!-- Comparison Note -->
+            <div style="text-align: center; margin-top: 60px; padding: 30px; background: rgba(255, 255, 255, 0.03); border-radius: 16px;">
+                <h4 style="font-size: 1.3em; margin-bottom: 15px; color: var(--text-primary);">💡 Not sure which to choose?</h4>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.7;">
+                    <strong>Get both tools?</strong> Choose a Bundle and save up to $12/month.<br>
+                    <strong>Just need one?</strong> Individual products give you exactly what you need.<br>
+                    <strong>All plans include 30-day money-back guarantee!</strong>
+                </p>
             </div>
         </div>
     </section>
